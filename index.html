@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>ZhongYi Potfolio</title>
+        <link href="https://db.onlinewebfonts.com/c/c817b12ca64d82575cc6fa0f759ac24b?family=F8-bit+Arcade+In" rel="stylesheet"> 
+        <link href="https://db.onlinewebfonts.com/c/1417df0f3cdb8da0094f648a0f41b6ef?family=VT323" rel="stylesheet" type="text/css"/>
     <style>
+
         /* 使用tab做标签页 */
          html, body {
             height: 100%;
@@ -21,32 +24,33 @@
             display: grid;
             grid-template-columns: 1fr 4fr 1fr;
             gap: 5px;
-            background: #FFFFF0;
+
+            background: #708090;
             height: 100%;
+            font-family: 'VT323';
         }
         .mainitem{
-            background-color: whitesmoke;
-            border-left: 1px solid #ddd;
-            border-right: 1px solid #ddd;
+            background-color: #F8F9FA;
+            border-left: 5px solid #ddd;
+            border-right: 5px solid #ddd;
         }
-        .other{
-            padding: 10px;
-            background: #f0f0f0;
-        }
+
         .top{
             height: 100px;
             width: 100%;
-            background-color: #F0FFFF;
+            background-color: #1a1a2e;
             text-align: center;
             display: block;
             line-height: 80px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 5px solid #ddd;
+            text-shadow: 4px 4px 2px #00868B;
         }
         .tab-content{
             height:80px;
         }
 
         /* 标签页样式 */
+
         .tab{
             padding: 10px 20px;
             cursor: pointer;
@@ -58,24 +62,29 @@
             margin-top: 0;
             top: 0;
             box-sizing: border-box;
+
         }
         /* hover-css指针悬停交互 */
         .tab:hover{
-            background-color: white;
+            /* background-color: #FF6347;  */
         }
-        .tab.active{
-            color: #2c3e50;
-            font-weight: 500;
-        }
-        .tab.active::after{
-        /* 激活标签页下划线 */
+        .tab:hover::after{
             content: '';
             position: absolute;
             bottom: -1px;
             left: 0;
             width: 100%;
             height: 2px;
-            background-color: #3498db;
+            background-color: #20B2AA;
+        }
+        .tab.active{
+            color: white;
+            background-color: #FF6347;
+            font-weight: 500;
+        }
+        .tab.active::after{
+        /* 激活标签页下划线 */
+            display: none;
         }
         /* 标签页内容 */
         .tab-content{
@@ -84,6 +93,9 @@
             overflow-y: auto;
             height: auto;
             /* 内容过多时滚动 */
+            font-family: "VT323";
+            font-size: 20px;
+            color: #696969;
         }
         .tab-content p{
             line-height: 1.2; /* 行高适中，提升可读性 */
@@ -98,11 +110,13 @@
         }
         .other{
             padding: 10px;
-            background: #F0FFFF;
-            border-top: 1px solid #ddd;
+            background: #1a1a2e;
+            border-top: 5px solid #ddd;
             text-align: center;
-            color: #696969;
+            color: #F5F5F5;
+            font-family: "VT323";
         }
+
     </style>
 </head>
 
@@ -113,21 +127,24 @@
 
 
     <div class="pageContainer">
-        <div class="top" style="font-size: 30px; font-family: Georgia; ">ZhongYi's Portfolio</div>
+        <div class="top" style="font-family: F8-bit Arcade In; font-size: 80px; color: #7FFFD4;">ZhongYi Portfolio</div>
+        <!-- style="font-size: 30px; font-family: Georgia; " -->
         <div class="grid">
-            <div class="item"></div>
+            <div class="item">
+                <div style="font-family: VT323;">Fonts made from <a href="http://www.onlinewebfonts.com">Web Fonts</a>is licensed by CC BY 4.0</div>
+            </div>
             <div class="mainitem">
                 <!-- 标签页导航 -->
                 <div class="tabs">
                     <!-- 用botton标签来创建可点击的按钮 -->
-                    <botton class="tab active" data-tab="tab1">Artifact</botton>
-                    <botton class="tab active" data-tab="tab2">Essay</botton>
-                    <botton class="tab active" data-tab="tab3">Groupwork</botton>
+                    <button class="tab active" data-tab="tab1" style="font: bolder 20px 'VT323'">Artifact</button>
+                    <button class="tab active" data-tab="tab2" style="font: bolder 20px 'VT323'">Essay</button>
+                    <button class="tab active" data-tab="tab3" style="font: bolder 20px 'VT323'">Groupwork</button>
             </div>
             <!-- 标签页内容 -->
             <div class="tab-content">
                 <div id="tab1" class="tab-pane active">
-                    <h3>Artifact</h3>
+                    <h3>headline</h3>
                     <p>Digital artefact creation.</p>
                     <p>Submit your individual analysis  of your own process of decision and creation of your digital object/ artefact on your website 250 words (approx). </p>
                     <p>Upload the URL that links directly to your analysis here then describe your process in the:</p>
@@ -138,11 +155,11 @@
                 </div>
                 <div id="tab2" class="tab-pane">
                     <h3>Essay</h3>
-                    <p>这是标签页中的信息</p>
+                    <p>content...</p>
                 </div>
                 <div id="tab3" class="tab-pane">
                     <h3>Groupwork</h3>
-                    <p>这是标签页中的信息</p>
+                    <p>content...</p>
                 </div>
             </div>
             </div>
@@ -156,26 +173,32 @@
     </div>
 
     <!-- javascript -->
-     <script>
-        // 标签页切换功能
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                // 移除所有标签的激活状态
-                document.querySelectorAll('.tab').forEach(t => {
-                    t.classList.remove('active');
+    <script>
+        // JavaScript 代码保持不变，确保标签切换功能正常
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            if (!tabs.length || !tabPanes.length) {
+                console.warn('未找到标签页或内容面板元素');
+                return;
+            }
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-tab');
+                    if (!targetId) return;
+                    
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    
+                    const targetPane = document.getElementById(targetId);
+                    if (targetPane) {
+                        targetPane.classList.add('active');
+                    }
                 });
-                
-                // 移除所有内容面板的激活状态
-                document.querySelectorAll('.tab-pane').forEach(pane => {
-                    pane.classList.remove('active');
-                });
-                
-                // 激活当前点击的标签
-                tab.classList.add('active');
-                
-                // 显示对应的内容面板
-                const tabId = tab.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
             });
         });
     </script>

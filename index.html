@@ -21,11 +21,13 @@
             display: grid;
             grid-template-columns: 1fr 4fr 1fr;
             gap: 5px;
-            background: #eee;
+            background: #FFFFF0;
             height: 100%;
         }
         .mainitem{
-            background-color: rgb(252, 245, 220);
+            background-color: whitesmoke;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
         }
         .other{
             padding: 10px;
@@ -34,15 +36,14 @@
         .top{
             height: 100px;
             width: 100%;
-            background-color: aliceblue;
+            background-color: #F0FFFF;
             text-align: center;
             display: block;
             line-height: 80px;
+            border-bottom: 1px solid #ddd;
         }
         .tab-content{
             height:80px;
-
-
         }
 
         /* 标签页样式 */
@@ -54,10 +55,13 @@
             font-size: 14px;
             position: relative;
             transition: all 0.2s ease;
+            margin-top: 0;
+            top: 0;
+            box-sizing: border-box;
         }
         /* hover-css指针悬停交互 */
         .tab:hover{
-            background-color: antiquewhite;
+            background-color: white;
         }
         .tab.active{
             color: #2c3e50;
@@ -76,9 +80,14 @@
         /* 标签页内容 */
         .tab-content{
             flex:1;
-            padding: 20px;
+            padding: 30px;
             overflow-y: auto;
+            height: auto;
             /* 内容过多时滚动 */
+        }
+        .tab-content p{
+            line-height: 1.2; /* 行高适中，提升可读性 */
+            text-align: justify; /* 文本两端对齐，更美观 */
         }
         /* 隐藏的标签页与激活 */
         .tab-pane{
@@ -89,17 +98,12 @@
         }
         .other{
             padding: 10px;
-            background: #f0f0f0;
+            background: #F0FFFF;
             border-top: 1px solid #ddd;
+            text-align: center;
+            color: #696969;
         }
-
-
-
-
-
-
     </style>
-
 </head>
 
 
@@ -109,37 +113,46 @@
 
 
     <div class="pageContainer">
-        <div class="top">ZhongYi's Portfolio，顶部栏</div>
+        <div class="top" style="font-size: 30px; font-family: Georgia; ">ZhongYi's Portfolio</div>
         <div class="grid">
-            <div class="item">左侧</div>
+            <div class="item"></div>
             <div class="mainitem">
                 <!-- 标签页导航 -->
                 <div class="tabs">
                     <!-- 用botton标签来创建可点击的按钮 -->
-                    <botton class="tab active" data-tab="tab1">标签页</botton>
-                    <botton class="tab active" data-tab="tab2">标签页</botton>
-                    <botton class="tab active" data-tab="tab3">标签页</botton>
+                    <botton class="tab active" data-tab="tab1">Artifact</botton>
+                    <botton class="tab active" data-tab="tab2">Essay</botton>
+                    <botton class="tab active" data-tab="tab3">Groupwork</botton>
             </div>
             <!-- 标签页内容 -->
             <div class="tab-content">
                 <div id="tab1" class="tab-pane active">
-                    <h3>标签页1</h3>
-                    <p>这是标签页中的信息</p>
+                    <h3>Artifact</h3>
+                    <p>Digital artefact creation.</p>
+                    <p>Submit your individual analysis  of your own process of decision and creation of your digital object/ artefact on your website 250 words (approx). </p>
+                    <p>Upload the URL that links directly to your analysis here then describe your process in the:</p>
+                    <p>Research - why did you decide to build this on this topic, with this content?</p>
+                    <p>Design - how did you agree/design what it would be -  for example, why text and not audio, why a timeline rather than a video, why a map?</p>
+                    <p>Implementation - how did it work - how successful is it in achieving your initial  goal?</p>
+                    <p>Reflection - what worked well?  What would you do differently if anything?</p>
                 </div>
                 <div id="tab2" class="tab-pane">
-                    <h3>标签页2</h3>
+                    <h3>Essay</h3>
                     <p>这是标签页中的信息</p>
                 </div>
                 <div id="tab3" class="tab-pane">
-                    <h3>标签页3</h3>
+                    <h3>Groupwork</h3>
                     <p>这是标签页中的信息</p>
                 </div>
             </div>
             </div>
 
-            <div class="item">右侧</div>
+            <div class="item"></div>
         </div>
-        <div class="other">other</div>
+        <div class="other">Contact Me
+            <br>
+            124107672@umail.ucc.ie
+        </div>
     </div>
 
     <!-- javascript -->

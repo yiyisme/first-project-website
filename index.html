@@ -24,7 +24,6 @@
             display: grid;
             grid-template-columns: 1fr 4fr 1fr;
             gap: 5px;
-
             background: #708090;
             height: 100%;
             font-family: 'VT323';
@@ -52,6 +51,7 @@
         /* 标签页样式 */
 
         .tab{
+            background-color: inherit;
             padding: 10px 20px;
             cursor: pointer;
             /* 鼠标放在上面会变成手指 */
@@ -131,15 +131,15 @@
         <!-- style="font-size: 30px; font-family: Georgia; " -->
         <div class="grid">
             <div class="item">
-                <div style="font-family: VT323;">Fonts made from <a href="http://www.onlinewebfonts.com">Web Fonts</a>is licensed by CC BY 4.0</div>
+                <div style="font-family: VT323; color: #F5FFFA;">Fonts made from <a href="http://www.onlinewebfonts.com">Web Fonts</a>is licensed by CC BY 4.0</div>
             </div>
             <div class="mainitem">
                 <!-- 标签页导航 -->
                 <div class="tabs">
                     <!-- 用botton标签来创建可点击的按钮 -->
-                    <button class="tab active" data-tab="tab1" style="font: bolder 20px 'VT323'">Artifact</button>
-                    <button class="tab active" data-tab="tab2" style="font: bolder 20px 'VT323'">Essay</button>
-                    <button class="tab active" data-tab="tab3" style="font: bolder 20px 'VT323'">Groupwork</button>
+                    <button class="tab " data-tab="tab1" style="font: bolder 20px 'VT323'">Artifact</button>
+                    <button class="tab" data-tab="tab2" style="font: bolder 20px 'VT323'">Essay</button>
+                    <button class="tab" data-tab="tab3" style="font: bolder 20px 'VT323'">Groupwork</button>
             </div>
             <!-- 标签页内容 -->
             <div class="tab-content">

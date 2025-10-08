@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- 字符编码，支持中文 -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <!-- 响应式设计，适应手机 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1.0">
+    <!-- 网页描述，出现在搜索结果摘要里 -->
+    <meta name="description" content="ZhongYi's personal portfolio">
+    <!-- 作者信息 -->
+    <meta name="author" content="ZhongYi">
+    <!-- 关键词 -->
+    <meta name="keywords" content="portfolio, zhongyi, html, css">
+    <!-- 搜索引擎指令，默认即可 -->
+    <meta name="robots" content="index, follow">
     <title>ZhongYi Potfolio</title>
-        <link href="https://db.onlinewebfonts.com/c/c817b12ca64d82575cc6fa0f759ac24b?family=F8-bit+Arcade+In" rel="stylesheet"> 
-        <link href="https://db.onlinewebfonts.com/c/1417df0f3cdb8da0094f648a0f41b6ef?family=VT323" rel="stylesheet" type="text/css"/>
+    <!-- 网站图标 -->
+    <link rel="icon" href="" type="">
+    <link href="https://db.onlinewebfonts.com/c/c817b12ca64d82575cc6fa0f759ac24b?family=F8-bit+Arcade+In" rel="stylesheet"> 
+    <link href="https://db.onlinewebfonts.com/c/1417df0f3cdb8da0094f648a0f41b6ef?family=VT323" rel="stylesheet" type="text/css"/>
     <style>
 
         /* 使用tab做标签页 */
@@ -28,13 +40,18 @@
             height: 100%;
             font-family: 'VT323';
         }
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 4fr 1fr; /* 大屏幕恢复 */
+        }
+
         .mainitem{
             background-color: #F8F9FA;
             border-left: 5px solid #ddd;
             border-right: 5px solid #ddd;
         }
 
-        .top{
+        header{
             height: 100px;
             width: 100%;
             background-color: #1a1a2e;
@@ -65,10 +82,9 @@
             color: #1a1a2e;
 
         }
-        /* hover-css指针悬停交互 */
-        .tab:hover{
-            /* background-color: #FF6347;  */
-        }
+        /* hover-css指针悬停交互 */ 
+        /* .tab:hover{
+            /* background-color: #FF6347;  }*/
         .tab:hover::after{
             content: '';
             position: absolute;
@@ -124,33 +140,35 @@
 
 
 
-<body>
+<body class="pageContainer">
+   
 
-
-    <div class="pageContainer">
-        <div class="top" style="font-family: F8-bit Arcade In; font-size: 80px; color: #7FFFD4;">ZhongYi Portfolio</div>
+    <!-- <div class="pageContainer"> -->
+        <header style="font-family: F8-bit Arcade In; font-size: 80px; color: #7FFFD4;">ZhongYi Portfolio</header>
         <!-- style="font-size: 30px; font-family: Georgia; " -->
         <div class="grid">
-            <div class="item">
+            <aside class="item">
                 <div style="font-family: VT323; color: #F5FFFA;">Fonts made from <a href="http://www.onlinewebfonts.com">Web Fonts</a>is licensed by CC BY 4.0</div>
-            </div>
-            <div class="mainitem">
+            </aside>
+            <main class="mainitem">
                 <!-- 标签页导航 -->
-                <div class="tabs">
+                <nav class="tabs">
                     <!-- 用botton标签来创建可点击的按钮 -->
+                    
                     <button class="tab" data-tab="tab0">Profile</button>
                     <button class="tab" data-tab="tab1">Artifact</button>
                     <button class="tab" data-tab="tab2">Essay</button>
                     <button class="tab" data-tab="tab3">Groupwork</button>
-            </div>
+                    
+                </nav>
             <!-- 标签页内容 -->
-            <div class="tab-content">
-                <div id="tab0" class="tab-pane active">
+            <section class="tab-content">
+                <section id="tab0" class="tab-pane active">
                     <h3>Hi! I'm ZhongYi.</h3>
                     <p>Here is my personal website! I made it with HTML, CSS, and JavaScript.</p>
                     <p></p>
-                </div>
-                <div id="tab1" class="tab-pane">
+                </section>
+                <section id="tab1" class="tab-pane">
                     <h3>headline</h3>
                     <p>Digital artefact creation.</p>
                     <p>Submit your individual analysis  of your own process of decision and creation of your digital object/ artefact on your website 250 words (approx). </p>
@@ -159,28 +177,36 @@
                     <p>Design - how did you agree/design what it would be -  for example, why text and not audio, why a timeline rather than a video, why a map?</p>
                     <p>Implementation - how did it work - how successful is it in achieving your initial  goal?</p>
                     <p>Reflection - what worked well?  What would you do differently if anything?</p>
-                </div>
-                <div id="tab2" class="tab-pane">
+                </section>
+                <section id="tab2" class="tab-pane">
                     <h3>Essay</h3>
                     <p>content...</p>
-                </div>
-                <div id="tab3" class="tab-pane">
+                </section>
+                <section id="tab3" class="tab-pane">
                     <h3>Groupwork</h3>
                     <p>content...</p>
-                </div>
-            </div>
-            </div>
+                </section>
+            </section>
+            </main>
 
-            <div class="item"></div>
+            <aside class="item"></aside>
         </div>
-        <div class="other">Contact Me
+        <footer class="other">Contact Me
             <br>
             124107672@umail.ucc.ie
-        </div>
-    </div>
+        </footer>
+     <audio id="hoversound" src="save.mp3" preload="auto"></audio>
+    <!-- </div> -->
 
     <!-- javascript -->
     <script>
+        const hoverSound = document.getElementById('hoversound');
+        document.querySelectorAll('.tab').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                hoverSound.currentTime = 0; // 从头播放
+                hoverSound.play();
+            });
+        });
         // JavaScript 代码保持不变，确保标签切换功能正常
         document.addEventListener('DOMContentLoaded', function() {
             const tabs = document.querySelectorAll('.tab');

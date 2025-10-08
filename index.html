@@ -56,12 +56,13 @@
             cursor: pointer;
             /* 鼠标放在上面会变成手指 */
             border: none;
-            font-size: 14px;
             position: relative;
             transition: all 0.2s ease;
             margin-top: 0;
             top: 0;
             box-sizing: border-box;
+            font: bolder 20px 'VT323';
+            color: #1a1a2e;
 
         }
         /* hover-css指针悬停交互 */
@@ -137,13 +138,19 @@
                 <!-- 标签页导航 -->
                 <div class="tabs">
                     <!-- 用botton标签来创建可点击的按钮 -->
-                    <button class="tab " data-tab="tab1" style="font: bolder 20px 'VT323'">Artifact</button>
-                    <button class="tab" data-tab="tab2" style="font: bolder 20px 'VT323'">Essay</button>
-                    <button class="tab" data-tab="tab3" style="font: bolder 20px 'VT323'">Groupwork</button>
+                    <button class="tab" data-tab="tab0">Profile</button>
+                    <button class="tab" data-tab="tab1">Artifact</button>
+                    <button class="tab" data-tab="tab2">Essay</button>
+                    <button class="tab" data-tab="tab3">Groupwork</button>
             </div>
             <!-- 标签页内容 -->
             <div class="tab-content">
-                <div id="tab1" class="tab-pane active">
+                <div id="tab0" class="tab-pane active">
+                    <h3>Hi! I'm ZhongYi.</h3>
+                    <p>Here is my personal website! I made it with HTML, CSS, and JavaScript.</p>
+                    <p></p>
+                </div>
+                <div id="tab1" class="tab-pane">
                     <h3>headline</h3>
                     <p>Digital artefact creation.</p>
                     <p>Submit your individual analysis  of your own process of decision and creation of your digital object/ artefact on your website 250 words (approx). </p>
